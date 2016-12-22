@@ -5,3 +5,7 @@ speech/Swift/Speech-gRPC-Streaming.mac/Pods
 speech/Swift/Speech-gRPC-Streaming/google
 speech/Swift/Speech-gRPC-Streaming/Pods
 Podfile.lock
+speech/Swift/Speech-gRPC-Streaming.mac/build
+speech/Swift/Speech-gRPC-Streaming/build
+Speech.xcscmblueprint
+contents.xcworkspacedata
