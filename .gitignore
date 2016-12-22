@@ -1,2 +1,7 @@
 .DS_Store
 
+speech/Swift/Speech-gRPC-Streaming.mac/google
+speech/Swift/Speech-gRPC-Streaming.mac/Pods
+speech/Swift/Speech-gRPC-Streaming/google
+speech/Swift/Speech-gRPC-Streaming/Pods
+Podfile.lock
