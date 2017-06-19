@@ -1,0 +1,36 @@
+Changes to get Pods project to compile correctly under macOS.
+
+1. make changes as described in BUILDFIXES
+
+2. Fix openssl module map in BoringSSL
+
+	rename
+	Pods/BoringSSL/include/openssl/module.modulemap
+	to
+	Pods/BoringSSL/include/openssl/BoringSSL.modulemap
+
+
+3. Open Pods/Pods.xcodeproj/project.pbxproj in text editor and 
+
+ - replace 
+ dstPath = "$(PRIVATE_HEADERS_FOLDER_PATH)/../../
+ with 
+ dstPath = "$(PRIVATE_HEADERS_FOLDER_PATH)/../../../../
+ 
+ - replace
+ ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/}
+ with
+ #ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/}
+ 
+ - in target gRPC, add the following to the script
+ echo \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"
+    cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"
+    ln -fs \"Contents/Resources/roots.pem\" roots.pem
+ 
+ 			shellScript = "cd \"$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME\"
+ln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
+ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
+    echo \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"
+    cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"
+    ln -fs \"Contents/Resources/roots.pem\" roots.pem
+";

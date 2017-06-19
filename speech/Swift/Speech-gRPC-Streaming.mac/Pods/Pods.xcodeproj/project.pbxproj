@@ -165,7 +165,7 @@
 		1BC6AFAC36D85DA14AE1C3D2E377273B /* internal.h in Copy ../../crypto/bn Private Headers */ = {isa = PBXBuildFile; fileRef = 9EFD75BA43D25A4BB82569EED97EE4B4 /* internal.h */; };
 		1C4CE37B7CC07CBF29B7072D9B4ED02D /* charmap.h in Headers */ = {isa = PBXBuildFile; fileRef = AF653514D9F2AF1054ECD45C089C5E78 /* charmap.h */; };
 		1CE3FFBE8556992AC5CD40424AAB1917 /* internal.h in Copy ../../crypto/pkcs8 Private Headers */ = {isa = PBXBuildFile; fileRef = 6BA95E594751A8FD4457EA50ECD5B0C4 /* internal.h */; };
-		1CEA1AF27C62C40A615DB088CC7DEE98 /* CloudSpeech.pbrpc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5375AAA7AF91C6B56AB36667A1F37A76 /* CloudSpeech.pbrpc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CEA1AF27C62C40A615DB088CC7DEE98 /* CloudSpeech.pbrpc.h in Headers */ = {isa = PBXBuildFile; fileRef = 242DB148D5CEAB13AE880FF6E8C47D94 /* CloudSpeech.pbrpc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CEDFD78F5D268B0655270EA1A7BFD66 /* md4.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A35F198941BBA466320B3B55CFC632D /* md4.h */; };
 		1D37B8605BD2C06318ED98EFABD45FF2 /* a_strnid.c in Sources */ = {isa = PBXBuildFile; fileRef = B9E87C684CE133CFA9BB6BAC99D77395 /* a_strnid.c */; settings = {COMPILER_FLAGS = "-DOPENSSL_NO_ASM -GCC_WARN_INHIBIT_ALL_WARNINGS -w -fno-objc-arc"; }; };
 		1DC6D084B91A5612E74243836301388E /* polling_entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9BD17F0F48559C238CDB89426FFCF8 /* polling_entity.h */; };
@@ -384,7 +384,7 @@
 		43B669EE83C0076B4811A8A1182CF85B /* channel_args.h in Headers */ = {isa = PBXBuildFile; fileRef = 426E92B5B55788685B8F2883A685CABD /* channel_args.h */; };
 		43F929C0E23FD2E391935DA1385D03C5 /* Struct.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9907D47072B3C185D7B2A5509681C6B3 /* Struct.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		44321941CEFE015C5D157C0801C66922 /* stream_map.h in Headers */ = {isa = PBXBuildFile; fileRef = D573DA7DD758A5B7B20C69189E47EE71 /* stream_map.h */; };
-		4446CD212082C27EC7163B349731C7C5 /* CloudSpeech.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E8B054E1DC5DB9FCF705ED52436C47 /* CloudSpeech.pbrpc.m */; };
+		4446CD212082C27EC7163B349731C7C5 /* CloudSpeech.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B1C0E97A14577A46252A90FDFC9C5 /* CloudSpeech.pbrpc.m */; };
 		44AB964C70EE263C41B18FC19A44A90E /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2137D55F83F3445BB79139EA49AD4D /* buffer.h */; };
 		44B49AD78BEB65D768ACA5080B0C0E34 /* lhash_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F4915F3A26B88D5F1396C4B8155AE2 /* lhash_macros.h */; };
 		44F4F29CC623D262E3804EC613B86EA0 /* umbrella.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 04D84DFE44753736CEC03E81C432507A /* umbrella.h */; };
@@ -1063,7 +1063,7 @@
 		BF13525C47489856D4B73F805236A52F /* lame_client.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EED4043810CE4FD83ED1EE991D6F0AD /* lame_client.h */; };
 		BF16E08C6F6E447D9FD0E16F4C040616 /* bin_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2321F41C5BF38B974068C05FD9F9AA45 /* bin_decoder.h */; };
 		BF180E68B07016C9846D7E003E04869A /* sync.h in Copy impl/codegen Public Headers */ = {isa = PBXBuildFile; fileRef = 2298BC396947313A2B3AC4B7C34BE6EC /* sync.h */; };
-		BF5FF27DCC819E94BB6FCC7463DD74D5 /* CloudSpeech.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = F4473AC85218321BA450CC560B7DE7BC /* CloudSpeech.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF5FF27DCC819E94BB6FCC7463DD74D5 /* CloudSpeech.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CD7DE241530FB2EFFC62353DB94BB1 /* CloudSpeech.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFB6DD907110BA463FF9CB5BA2E50881 /* GPBCodedInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 828AF78A00793FA623EE87590B1F27CF /* GPBCodedInputStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFDC02740874455ED0E2EADDA698C08D /* x509name.c in Sources */ = {isa = PBXBuildFile; fileRef = 745D332DC756707E794832FE9E648410 /* x509name.c */; settings = {COMPILER_FLAGS = "-DOPENSSL_NO_ASM -GCC_WARN_INHIBIT_ALL_WARNINGS -w -fno-objc-arc"; }; };
 		BFE9294F25F8898B15030FE8FDCDA31C /* GRPCWrappedCall.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F472A3BB5C62EB2A310A61B604F512 /* GRPCWrappedCall.m */; };
@@ -1380,7 +1380,7 @@
 		F91DEF5431B2673F5249F1CF2A5DF595 /* crypto.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 6752FB436F78F17F2067ED793C96B7CD /* crypto.h */; };
 		F97C16739CA88ECEC477F362291528C8 /* credentials_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 06A189686A4C2E006AC8B892CA7EF525 /* credentials_posix.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F982916999947804F980A0D32C28778F /* auth_filters.h in Copy ../../src/core/lib/security/transport Private Headers */ = {isa = PBXBuildFile; fileRef = CE77F3F3C0935E629233BE31CC010DA9 /* auth_filters.h */; };
-		F9917DA15426839C581B9B60FB385186 /* CloudSpeech.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 396179660FD47B9317A5DBCE230EAFBA /* CloudSpeech.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F9917DA15426839C581B9B60FB385186 /* CloudSpeech.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC099940739F27BEB8C6B93772150C8 /* CloudSpeech.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F9935CB0081436EF0B9723694D2E20C7 /* mlog.h in Headers */ = {isa = PBXBuildFile; fileRef = DCABF8ABB17A5CD005CC2EEF17B5A3BD /* mlog.h */; };
 		F99B1217C4CC131364A950084473294E /* x_x509a.c in Sources */ = {isa = PBXBuildFile; fileRef = 59D7923DDF0C2A552F571552C8F1AAEA /* x_x509a.c */; settings = {COMPILER_FLAGS = "-DOPENSSL_NO_ASM -GCC_WARN_INHIBIT_ALL_WARNINGS -w -fno-objc-arc"; }; };
 		F99DF711A02797DF60ACE6EEDBF5A1D6 /* parser.h in Copy ../../src/core/lib/http Private Headers */ = {isa = PBXBuildFile; fileRef = 5F5A992BC5EAB1DF02EBC6491274F2AC /* parser.h */; };
@@ -2629,6 +2629,7 @@
 		0D094D3DBF9CAAC7899B94FEBA2E3F33 /* pollset_set_windows.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pollset_set_windows.c; path = src/core/lib/iomgr/pollset_set_windows.c; sourceTree = "<group>"; };
 		0D503B00B1376C00E82A6F3FFA7C106A /* cpu-aarch64-linux.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "cpu-aarch64-linux.c"; path = "crypto/cpu-aarch64-linux.c"; sourceTree = "<group>"; };
 		0D90DC3FF4508337E2EE3E9E56866FFE /* grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DC099940739F27BEB8C6B93772150C8 /* CloudSpeech.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbobjc.m; sourceTree = "<group>"; };
 		0DC496133D9DF0481D2123457DD44689 /* load_file.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = load_file.h; path = src/core/lib/iomgr/load_file.h; sourceTree = "<group>"; };
 		0DF164021DED6E0031A759B8EF36DCB1 /* init.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = init.c; path = src/core/lib/surface/init.c; sourceTree = "<group>"; };
 		0E5BC9955D42D5007957F3FC447E94FA /* placeholders.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = placeholders.c; path = src/core/ext/census/placeholders.c; sourceTree = "<group>"; };
@@ -2729,6 +2730,7 @@
 		2321F41C5BF38B974068C05FD9F9AA45 /* bin_decoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bin_decoder.h; path = src/core/ext/transport/chttp2/transport/bin_decoder.h; sourceTree = "<group>"; };
 		23249D1B7F3BFF1B4BE6FF309E10FEA0 /* ec_montgomery.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ec_montgomery.c; path = crypto/ec/ec_montgomery.c; sourceTree = "<group>"; };
 		23CB5AA596C8D76EE9AEAFC3234BF7E7 /* atm_windows.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = atm_windows.h; path = include/grpc/impl/codegen/atm_windows.h; sourceTree = "<group>"; };
+		242DB148D5CEAB13AE880FF6E8C47D94 /* CloudSpeech.pbrpc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbrpc.h; sourceTree = "<group>"; };
 		24DEA3F512BA29F33F323636BC27D95B /* init_secure.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = init_secure.c; path = src/core/lib/surface/init_secure.c; sourceTree = "<group>"; };
 		25249B4FCF6261ACE044EA4088F7EF78 /* subchannel_call_holder.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = subchannel_call_holder.c; path = src/core/ext/client_config/subchannel_call_holder.c; sourceTree = "<group>"; };
 		25571CC0FC6381101B988F08F1E519C1 /* GPBUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUtilities.h; path = objectivec/GPBUtilities.h; sourceTree = "<group>"; };
@@ -2822,7 +2824,6 @@
 		38F2265ED2AB24EC9D9B6D55FFF2E006 /* string.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = string.c; path = src/core/lib/support/string.c; sourceTree = "<group>"; };
 		391E813A2BA68F22E7E4A7AAAC37C48B /* ssl3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl3.h; path = include/openssl/ssl3.h; sourceTree = "<group>"; };
 		3957E0BB7FC8A051B24CCDCEB24FEE7F /* channel_connectivity.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = channel_connectivity.c; path = src/core/ext/client_config/channel_connectivity.c; sourceTree = "<group>"; };
-		396179660FD47B9317A5DBCE230EAFBA /* CloudSpeech.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbobjc.m; sourceTree = "<group>"; };
 		39A3530A75B7BB641B5B3D756D0F9446 /* tls13_client.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tls13_client.c; path = ssl/tls13_client.c; sourceTree = "<group>"; };
 		39A4FD693504124490C6A67EA7249C9F /* generic.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = generic.c; path = crypto/bn/generic.c; sourceTree = "<group>"; };
 		39D18848348C7EC06523E5FDBD70A942 /* a_time.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = a_time.c; path = crypto/asn1/a_time.c; sourceTree = "<group>"; };
@@ -2916,7 +2917,6 @@
 		52D86E1FC475CC2B0C4D269ECCE04112 /* transport_security.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = transport_security.c; path = src/core/lib/tsi/transport_security.c; sourceTree = "<group>"; };
 		52E272D599C0D328E3C41D4F9CA19880 /* log_windows.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log_windows.h; path = include/grpc/support/log_windows.h; sourceTree = "<group>"; };
 		530F874A67FEC9D91383A3B454B02BC9 /* pcy_tree.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pcy_tree.c; path = crypto/x509v3/pcy_tree.c; sourceTree = "<group>"; };
-		5375AAA7AF91C6B56AB36667A1F37A76 /* CloudSpeech.pbrpc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbrpc.h; sourceTree = "<group>"; };
 		537BA4B279DF574D33A4980FD82FDDCF /* print.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = print.c; path = crypto/evp/print.c; sourceTree = "<group>"; };
 		53D2601D7AC8FB73804A499C884D4EDC /* gRPC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "gRPC-dummy.m"; sourceTree = "<group>"; };
 		53E3934F9E8EAF96D28BCD1279E5C1BC /* a_verify.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = a_verify.c; path = crypto/x509/a_verify.c; sourceTree = "<group>"; };
@@ -3534,7 +3534,6 @@
 		E0E98C0872D2C6807BB73DDBBD2A37C2 /* json_token.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = json_token.c; path = src/core/lib/security/credentials/jwt/json_token.c; sourceTree = "<group>"; };
 		E12E4918D34F17A6C871898362A0C08E /* resolver_factory.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = resolver_factory.c; path = src/core/ext/client_config/resolver_factory.c; sourceTree = "<group>"; };
 		E170B8874158158DE0395BC82365651E /* asn1_gen.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = asn1_gen.c; path = crypto/x509/asn1_gen.c; sourceTree = "<group>"; };
-		E1E8B054E1DC5DB9FCF705ED52436C47 /* CloudSpeech.pbrpc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbrpc.m; sourceTree = "<group>"; };
 		E22F49D4501FB0612FC23512C7D30CE2 /* stack.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = stack.c; path = crypto/stack/stack.c; sourceTree = "<group>"; };
 		E257C7112F6218F502151F4C8B06809E /* div.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = div.c; path = crypto/bn/div.c; sourceTree = "<group>"; };
 		E30F54588434912507A6DE9C43F64F7E /* GRXWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRXWriter.h; path = "src/objective-c/RxLibrary/GRXWriter.h"; sourceTree = "<group>"; };
@@ -3543,6 +3542,7 @@
 		E3ED47D14AFAEB662C43120BD77BF246 /* GPBArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBArray.m; path = objectivec/GPBArray.m; sourceTree = "<group>"; };
 		E43056BEB1698EAD3650CB424C0CD595 /* time_averaged_stats.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = time_averaged_stats.h; path = src/core/lib/iomgr/time_averaged_stats.h; sourceTree = "<group>"; };
 		E480455DABA4081DD18548A048651E8E /* rsa.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = rsa.c; path = crypto/rsa/rsa.c; sourceTree = "<group>"; };
+		E4CD7DE241530FB2EFFC62353DB94BB1 /* CloudSpeech.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbobjc.h; sourceTree = "<group>"; };
 		E52958DA99834FE2F56074B0D131CFF9 /* obj_dat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = obj_dat.h; path = crypto/obj/obj_dat.h; sourceTree = "<group>"; };
 		E595D82E81F2F98768A90B4C3EC38587 /* dh_asn1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = dh_asn1.c; path = crypto/dh/dh_asn1.c; sourceTree = "<group>"; };
 		E6250F007C9C18C08F80B7DAD07D0DE9 /* alloc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = alloc.h; path = include/grpc/impl/codegen/alloc.h; sourceTree = "<group>"; };
@@ -3595,6 +3595,7 @@
 		EFD6190FE69ECF591D2C0CDD6B897A0E /* json_writer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = json_writer.c; path = src/core/lib/json/json_writer.c; sourceTree = "<group>"; };
 		EFE6AEFC937D17B9C05424F6EC001151 /* pem_x509.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pem_x509.c; path = crypto/pem/pem_x509.c; sourceTree = "<group>"; };
 		F01C246BF656EDC78440CF2BAEE14915 /* iocp_windows.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iocp_windows.h; path = src/core/lib/iomgr/iocp_windows.h; sourceTree = "<group>"; };
+		F03B1C0E97A14577A46252A90FDFC9C5 /* CloudSpeech.pbrpc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbrpc.m; sourceTree = "<group>"; };
 		F057CCD8AE19C780E4CC431D8DFF9A05 /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = include/openssl/blowfish.h; sourceTree = "<group>"; };
 		F06363F83F84722FE03B9865294EDB05 /* error.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = error.c; path = src/core/lib/iomgr/error.c; sourceTree = "<group>"; };
 		F09674DC20246F8277527B28C001EFAA /* transport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport.h; path = src/core/lib/transport/transport.h; sourceTree = "<group>"; };
@@ -3616,7 +3617,6 @@
 		F3FAD1EB6CC718970793AF727888450D /* init.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = init.h; path = src/core/lib/surface/init.h; sourceTree = "<group>"; };
 		F3FC26E3D1E1FF72CA7388ADC7EDCA04 /* Any.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Any.pbobjc.h; path = objectivec/google/protobuf/Any.pbobjc.h; sourceTree = "<group>"; };
 		F40146F46621E52D0A7DED0896366901 /* workqueue_windows.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = workqueue_windows.h; path = src/core/lib/iomgr/workqueue_windows.h; sourceTree = "<group>"; };
-		F4473AC85218321BA450CC560B7DE7BC /* CloudSpeech.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbobjc.h; sourceTree = "<group>"; };
 		F472529926E1B54E8A630ACC77680142 /* s3_pkt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = s3_pkt.c; path = ssl/s3_pkt.c; sourceTree = "<group>"; };
 		F4ED4E602084DA2B923CEF35A05DD8F0 /* timeout_encoding.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = timeout_encoding.c; path = src/core/ext/transport/chttp2/transport/timeout_encoding.c; sourceTree = "<group>"; };
 		F526BE688EC1C68346E6051DFEDEDBE6 /* tcp_server_posix.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tcp_server_posix.c; path = src/core/lib/iomgr/tcp_server_posix.c; sourceTree = "<group>"; };
@@ -4062,9 +4062,17 @@
 		4A55008701FF8B2089AE3AFAF33C5B94 /* cloud */ = {
 			isa = PBXGroup;
 			children = (
-				6E8A4017D87ADD61D0EC509E971F305C /* speech */,
+				509EE64836DAE25887E5A7E7FA85A94E /* speech */,
 			);
 			path = cloud;
+			sourceTree = "<group>";
+		};
+		509EE64836DAE25887E5A7E7FA85A94E /* speech */ = {
+			isa = PBXGroup;
+			children = (
+				68CE7EFCA08880F0B147894597AEA077 /* v1 */,
+			);
+			path = speech;
 			sourceTree = "<group>";
 		};
 		50DAAE6247FBF836EA209B840ACFA9E1 /* Messages */ = {
@@ -4073,15 +4081,6 @@
 				16B46C2F684975CAB16FFCDEB4B71D0D /* google */,
 			);
 			name = Messages;
-			sourceTree = "<group>";
-		};
-		5915A768E8808B392BBE8A5B3C6B4246 /* v1beta1 */ = {
-			isa = PBXGroup;
-			children = (
-				F4473AC85218321BA450CC560B7DE7BC /* CloudSpeech.pbobjc.h */,
-				396179660FD47B9317A5DBCE230EAFBA /* CloudSpeech.pbobjc.m */,
-			);
-			path = v1beta1;
 			sourceTree = "<group>";
 		};
 		65E5E913A651C940944D519095D9AC01 /* Support Files */ = {
@@ -4097,18 +4096,19 @@
 			path = "../Target Support Files/gRPC-Core";
 			sourceTree = "<group>";
 		};
-		6E8A4017D87ADD61D0EC509E971F305C /* speech */ = {
+		68CE7EFCA08880F0B147894597AEA077 /* v1 */ = {
 			isa = PBXGroup;
 			children = (
-				5915A768E8808B392BBE8A5B3C6B4246 /* v1beta1 */,
+				E4CD7DE241530FB2EFFC62353DB94BB1 /* CloudSpeech.pbobjc.h */,
+				0DC099940739F27BEB8C6B93772150C8 /* CloudSpeech.pbobjc.m */,
 			);
-			path = speech;
+			path = v1;
 			sourceTree = "<group>";
 		};
 		6F96E86CBCEEA263B26A4E1C8B91A405 /* cloud */ = {
 			isa = PBXGroup;
 			children = (
-				9670DE36254058A869ABBD29E92E8DFC /* speech */,
+				7C689DCA729E8C60C7233BB355FEFDD8 /* speech */,
 			);
 			path = cloud;
 			sourceTree = "<group>";
@@ -4120,6 +4120,14 @@
 				A86DC0E62432E3AE7A85E4BC6FFBB18F /* Operations.pbrpc.m */,
 			);
 			path = longrunning;
+			sourceTree = "<group>";
+		};
+		7C689DCA729E8C60C7233BB355FEFDD8 /* speech */ = {
+			isa = PBXGroup;
+			children = (
+				E39462D6494EE470C3D7360BA6ADB05C /* v1 */,
+			);
+			path = speech;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -4159,23 +4167,6 @@
 				182FEE2DE9C3FE7861A3222FE28A535E /* Status.pbobjc.m */,
 			);
 			path = rpc;
-			sourceTree = "<group>";
-		};
-		8F4966533627A56BFAD7CC2A1968EA91 /* v1beta1 */ = {
-			isa = PBXGroup;
-			children = (
-				5375AAA7AF91C6B56AB36667A1F37A76 /* CloudSpeech.pbrpc.h */,
-				E1E8B054E1DC5DB9FCF705ED52436C47 /* CloudSpeech.pbrpc.m */,
-			);
-			path = v1beta1;
-			sourceTree = "<group>";
-		};
-		9670DE36254058A869ABBD29E92E8DFC /* speech */ = {
-			isa = PBXGroup;
-			children = (
-				8F4966533627A56BFAD7CC2A1968EA91 /* v1beta1 */,
-			);
-			path = speech;
 			sourceTree = "<group>";
 		};
 		A574014DDEA7148ED57CDBB290812139 /* Implementation */ = {
@@ -4761,6 +4752,15 @@
 				D0CF7AACA3482A72ACE2A2F9DA5F7952 /* MonitoredResource.pbobjc.m */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		E39462D6494EE470C3D7360BA6ADB05C /* v1 */ = {
+			isa = PBXGroup;
+			children = (
+				242DB148D5CEAB13AE880FF6E8C47D94 /* CloudSpeech.pbrpc.h */,
+				F03B1C0E97A14577A46252A90FDFC9C5 /* CloudSpeech.pbrpc.m */,
+			);
+			path = v1;
 			sourceTree = "<group>";
 		};
 		E7BB435BF96F159E651C24E4F33D4EDB /* gRPC-ProtoRPC */ = {
@@ -5984,7 +5984,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME\"\nln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\nln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\n    echo \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\n    cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\n    ln -fs \"Contents/Resources/roots.pem\" roots.pem\n";
+			shellScript = "cd \"$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME\"\nln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\n#ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\necho \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\ncd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\n    ln -fs \"Contents/Resources/roots.pem\" roots.pem";
 		};
 		AF1D4C9458F6F44B6E763016DA015326 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -5998,7 +5998,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME\"\nln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\nln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\n";
+			shellScript = "cd \"$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME\"\nln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\n#ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}\n";
 		};
 		CE2E15F3D3BB4147924D81F2CB085E57 /* Create Symlinks to Header Folders */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -6883,6 +6883,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-Wno-nullability-completeness-on-arrays",
+					"-Wno-nullability-inferred-on-nested-type",
+				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -6922,7 +6926,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87AC25A7A43F661F2524EA4BB82ECBC5 /* googleapis.xcconfig */;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -6953,7 +6956,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87AC25A7A43F661F2524EA4BB82ECBC5 /* googleapis.xcconfig */;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -7061,6 +7063,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"-Wno-nullability-completeness-on-arrays",
+					"-Wno-nullability-inferred-on-nested-type",
+				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
