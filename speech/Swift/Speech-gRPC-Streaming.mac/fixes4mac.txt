@@ -28,10 +28,5 @@ Changes to get Pods project to compile correctly under macOS.
     cd "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle"
     ln -fs "Contents/Resources/roots.pem" roots.pem
 
- 			shellScript = "cd "$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME"
-ln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
-ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
-    echo "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle"
-    cd "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle"
-    ln -fs "Contents/Resources/roots.pem" roots.pem
-";
+4. Add 'All' agregate target to Pods.xproject and put other targets as dependencies
+[this one is done only ones after you copy Pods.xcodeproj from IOS side]
