@@ -4,10 +4,18 @@ echo "Installing Cocoapod dependencies"
 pod install
 
 echo "Fix the bad imports in the generated files"
-grep -rl "google/cloud/speech/v1beta1/CloudSpeech.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/cloud\/speech\/v1beta1\/CloudSpeech\.pbobjc\.h"'@'\<googleapis\/CloudSpeech\.pbobjc\.h\>'@g
+grep -rl "google/cloud/speech/v1/CloudSpeech.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"'@'\<googleapis\/CloudSpeech\.pbobjc\.h\>'@g
 grep -rl "google/api/Annotations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/api\/Annotations\.pbobjc\.h"'@'\<googleapis\/Annotations\.pbobjc\.h\>'@g
 grep -rl "google/longrunning/Operations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/longrunning\/Operations\.pbobjc\.h"'@'\<googleapis\/Operations\.pbobjc\.h\>'@g
 grep -rl "google/rpc/Status.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/rpc\/Status\.pbobjc\.h"'@'\<googleapis\/Status\.pbobjc\.h\>'@g
+grep -rl "google/protobuf/Duration.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/protobuf\/Duration\.pbobjc\.h"'@'\<googleapis\/Duration\.pbobjc\.h>'@g
+
+sed -i '' s@'#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
+
+
+#import "transformations/GRXMappingWriter.h"
+
+mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
 
 echo "Opening the project workspace in Xcode"
 open Speech.xcworkspace

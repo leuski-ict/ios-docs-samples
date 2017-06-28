@@ -10,23 +10,24 @@ Changes to get Pods project to compile correctly under macOS.
 	Pods/BoringSSL/include/openssl/BoringSSL.modulemap
 
 
-3. Open Pods/Pods.xcodeproj/project.pbxproj in text editor and 
+3. Open Pods/Pods.xcodeproj/project.pbxproj in text editor and
+[this one is done only ones after you copy Pods.xcodeproj from IOS side]
 
- - replace 
+ - replace
  dstPath = "$(PRIVATE_HEADERS_FOLDER_PATH)/../../
- with 
+ with
  dstPath = "$(PRIVATE_HEADERS_FOLDER_PATH)/../../../../
- 
+
  - replace
  ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/}
  with
  #ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/}
- 
+
  - in target gRPC, add the following to the script
  echo "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle"
     cd "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle"
     ln -fs "Contents/Resources/roots.pem" roots.pem
- 
+
  			shellScript = "cd "$CONFIGURATION_BUILD_DIR/$WRAPPER_NAME"
 ln -fs ${PUBLIC_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PUBLIC_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
 ln -fs ${PRIVATE_HEADERS_FOLDER_PATH#$WRAPPER_NAME/} ${PRIVATE_HEADERS_FOLDER_PATH#$CONTENTS_FOLDER_PATH/}
