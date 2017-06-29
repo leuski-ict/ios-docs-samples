@@ -1,5 +1,6 @@
 .DS_Store
 
+speech/Swift/Speech-gRPC-Streaming.mac/Pods
 speech/Swift/Speech-gRPC-Streaming/Pods
 !speech/Swift/Speech-gRPC-Streaming/Pods/Pods.xcodeproj/
 !speech/Swift/Speech-gRPC-Streaming.mac/Pods/Pods.xcodeproj/
