@@ -2,7 +2,7 @@
 
 echo "Installing Cocoapod dependencies"
 pod install
-
+ 
 echo "Fix the bad imports in the generated files"
 grep -rl "google/cloud/speech/v1/CloudSpeech.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"'@'\<googleapis\/CloudSpeech\.pbobjc\.h\>'@g
 grep -rl "google/api/Annotations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/api\/Annotations\.pbobjc\.h"'@'\<googleapis\/Annotations\.pbobjc\.h\>'@g
@@ -10,14 +10,29 @@ grep -rl "google/longrunning/Operations.pbobjc.h"  google/** | xargs sed -i '' s
 grep -rl "google/rpc/Status.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/rpc\/Status\.pbobjc\.h"'@'\<googleapis\/Status\.pbobjc\.h\>'@g
 grep -rl "google/protobuf/Duration.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/protobuf\/Duration\.pbobjc\.h"'@'\<googleapis\/Duration\.pbobjc\.h>'@g
 
-## commenting out #import "transformations/GRXMappingWriter.h" in gRPC-RxLibrary-umbrella.h
-sed -i '' s@'#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
+echo "commenting out #import \"transformations/GRXMappingWriter.h\" in gRPC-RxLibrary-umbrella.h"
+sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
 
+echo "fixing private headers path"
+sed -i '' s@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/../../'@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/'@g "Pods/Pods.xcodeproj/project.pbxproj"
+
+echo "fixing symlinking of Headers and PrivateHeaders into the root of the bundle. "
+## 1. do not link PrivateHeaders. They are private for a reason.
+## 2. this step does happen automatically in xcode when you designate headers as
+## public. However, these pods do not do that. They mark headers as project and copy 
+## them into the Headers directory in a separate copy files phase. So the linking
+## part is required.  
+sed -i '' s@'shellScript = "base=\\"\$CONFIGURATION_BUILD_DIR/\$WRAPPER_NAME\\"\\nln -fs \\"\$base/\${PUBLIC_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\" \\"\$base/\${PUBLIC_HEADERS_FOLDER_PATH#\$CONTENTS_FOLDER_PATH/}\\"\\nln -fs \\"\$base/\${PRIVATE_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\" \\"\$base/\${PRIVATE_HEADERS_FOLDER_PATH#\$CONTENTS_FOLDER_PATH/}\\"\\n";'@'shellScript = "cd \\"\${CONFIGURATION_BUILD_DIR}/\${WRAPPER_NAME}\\"\\nln -fs \\"\${PUBLIC_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\"\\n";'@g "Pods/Pods.xcodeproj/project.pbxproj"
+
+echo "fix the certificate bundle"
+perl -0777 -i -pe 's@(/\* gRPC \*/ = {[^}]*?isa = PBXNativeTarget.*?buildPhases.*?)(\).*?};)@$1  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,\n$2\n575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {\n			isa = PBXShellScriptBuildPhase;\n			buildActionMask = 2147483647;\n			files = (\n			);\n			inputPaths = (\n			);\n			name = "Create Symlink to roots.pem File";\n			outputPaths = (\n			);\n			runOnlyForDeploymentPostprocessing = 0;\n			shellPath = /bin/sh;\n			shellScript = "cd \\"\${CONFIGURATION_BUILD_DIR}/\${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\\"\\nln -fs \\"Contents/Resources/roots.pem\\"\\n";\n			showEnvVarsInLog = 1;\n		};@igs' Pods/Pods.xcodeproj/project.pbxproj
+
+echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names
 mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
 
 ## build it. assume that 'All' target exists, which it is not by default
-xcodebuild -project Pods/Pods.xcodeproj -target All -configuration Release
+xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release
 
 #echo "Opening the project workspace in Xcode"
 #open Speech.xcworkspace
