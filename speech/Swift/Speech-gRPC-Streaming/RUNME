@@ -18,6 +18,7 @@ echo "fix openssl modulemap"
 mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
 
 ## build it. assume that 'All' target exists, which it is not by default
-xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release-iphoneos
+xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release-iphoneos -sdk iphoneos
+xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release-iphonesimulator -sdk iphonesimulator
 
 

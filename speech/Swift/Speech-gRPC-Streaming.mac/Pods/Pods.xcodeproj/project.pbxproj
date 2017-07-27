@@ -5731,6 +5731,19 @@
 				D1318E109AD1B8F35CD15D6EDA4C0CD3 /* Copy private Private Headers */,
 				07A78FE4BA7DC8E85BEEB608B9D33EF7 /* Create Symlinks to Header Folders */,
 			  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
+  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,
 );
 			buildRules = (
 			);
@@ -5743,6 +5756,201 @@
 			productName = gRPC;
 			productReference = 520917440C0F53DD512810314DD80C86 /* GRPCClient.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
+		};
+575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Symlink to roots.pem File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\"\nln -fs \"Contents/Resources/roots.pem\"\n";
+			showEnvVarsInLog = 1;
 		};
 575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {
 			isa = PBXShellScriptBuildPhase;
