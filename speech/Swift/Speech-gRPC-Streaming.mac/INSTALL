@@ -12,6 +12,7 @@ grep -rl "google/protobuf/Duration.pbobjc.h"  google/** | xargs sed -i '' s@'"go
 
 echo "commenting out #import \"transformations/GRXMappingWriter.h\" in gRPC-RxLibrary-umbrella.h"
 sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
+sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#import "internal_testing\/GRPCCall+InternalTests\.h"'@g "Pods/Target Support Files/gRPC/gRPC-umbrella.h"
 
 echo "fixing private headers path"
 sed -i '' s@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/../../'@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/'@g "Pods/Pods.xcodeproj/project.pbxproj"
@@ -27,9 +28,9 @@ sed -i '' s@'shellScript = "base=\\"\$CONFIGURATION_BUILD_DIR/\$WRAPPER_NAME\\"\
 echo "fix the certificate bundle"
 perl -0777 -i -pe 's@(/\* gRPC \*/ = {[^}]*?isa = PBXNativeTarget.*?buildPhases.*?)(\).*?};)@$1  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,\n$2\n575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {\n			isa = PBXShellScriptBuildPhase;\n			buildActionMask = 2147483647;\n			files = (\n			);\n			inputPaths = (\n			);\n			name = "Create Symlink to roots.pem File";\n			outputPaths = (\n			);\n			runOnlyForDeploymentPostprocessing = 0;\n			shellPath = /bin/sh;\n			shellScript = "cd \\"\${CONFIGURATION_BUILD_DIR}/\${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\\"\\nln -fs \\"Contents/Resources/roots.pem\\"\\n";\n			showEnvVarsInLog = 1;\n		};@igs' Pods/Pods.xcodeproj/project.pbxproj
 
-echo "fix openssl modulemap"
+#echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names
-mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
+#mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
 
 ## build it. assume that 'All' target exists, which it is not by default
 xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release
