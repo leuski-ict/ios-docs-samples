@@ -2,7 +2,7 @@
 
 echo "Installing Cocoapod dependencies"
 pod install
- 
+
 echo "Fix the bad imports in the generated files"
 grep -rl "google/cloud/speech/v1/CloudSpeech.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"'@'\<googleapis\/CloudSpeech\.pbobjc\.h\>'@g
 grep -rl "google/api/Annotations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/api\/Annotations\.pbobjc\.h"'@'\<googleapis\/Annotations\.pbobjc\.h\>'@g
@@ -16,13 +16,14 @@ sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#impor
 
 echo "fixing private headers path"
 sed -i '' s@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/../../'@'dstPath = "\$(PRIVATE_HEADERS_FOLDER_PATH)/'@g "Pods/Pods.xcodeproj/project.pbxproj"
+sed -i '' s@'dstPath = "\$(PUBLIC_HEADERS_FOLDER_PATH)/../../'@'dstPath = "\$(PUBLIC_HEADERS_FOLDER_PATH)/'@g "Pods/Pods.xcodeproj/project.pbxproj"
 
 echo "fixing symlinking of Headers and PrivateHeaders into the root of the bundle. "
 ## 1. do not link PrivateHeaders. They are private for a reason.
 ## 2. this step does happen automatically in xcode when you designate headers as
-## public. However, these pods do not do that. They mark headers as project and copy 
+## public. However, these pods do not do that. They mark headers as project and copy
 ## them into the Headers directory in a separate copy files phase. So the linking
-## part is required.  
+## part is required.
 sed -i '' s@'shellScript = "base=\\"\$CONFIGURATION_BUILD_DIR/\$WRAPPER_NAME\\"\\nln -fs \\"\$base/\${PUBLIC_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\" \\"\$base/\${PUBLIC_HEADERS_FOLDER_PATH#\$CONTENTS_FOLDER_PATH/}\\"\\nln -fs \\"\$base/\${PRIVATE_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\" \\"\$base/\${PRIVATE_HEADERS_FOLDER_PATH#\$CONTENTS_FOLDER_PATH/}\\"\\n";'@'shellScript = "cd \\"\${CONFIGURATION_BUILD_DIR}/\${WRAPPER_NAME}\\"\\nln -fs \\"\${PUBLIC_HEADERS_FOLDER_PATH#\$WRAPPER_NAME/}\\"\\n";'@g "Pods/Pods.xcodeproj/project.pbxproj"
 
 echo "fix the certificate bundle"
