@@ -1,11 +1,27 @@
+# Xcode
 .DS_Store
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+*xcuserdata
+profile
+*.moved-aside
+DerivedData
+*.xccheckout
 
 speech/Swift/Speech-gRPC-Streaming.mac/Pods
 speech/Swift/Speech-gRPC-Streaming/Pods
 !speech/Swift/Speech-gRPC-Streaming/Pods/Pods.xcodeproj/
 !speech/Swift/Speech-gRPC-Streaming.mac/Pods/Pods.xcodeproj/
-!speech/Swift/Speech-gRPC-Streaming.mac/Pods/Pods.xcodeproj/xcshareddata
-Podfile.lock
+
 speech/Swift/Speech-gRPC-Streaming.mac/build
 speech/Swift/Speech-gRPC-Streaming/build
 Speech.xcscmblueprint
@@ -18,3 +34,12 @@ speech/Swift/Speech-gRPC-Streaming.mac/Speech.xcworkspace/xcuserdata
 speech/Swift/Speech-gRPC-Streaming/Speech.xcodeproj/project.xcworkspace/xcuserdata
 speech/Swift/Speech-gRPC-Streaming/google/**/*.[hm]
 speech/Swift/Speech-gRPC-Streaming.mac/google/**/*.[hm]
+
+
+*.ipa
+*.dSYM.zip
+Pods/
+Podfile.lock
+Gemfile.lock
+#google/
+
