@@ -4,22 +4,51 @@ echo "Installing Cocoapod dependencies"
 pod install
 
 echo "Fix the bad imports in the generated files"
-grep -rl "google/cloud/speech/v1/CloudSpeech.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"'@'\<googleapis\/CloudSpeech\.pbobjc\.h\>'@g
-grep -rl "google/api/Annotations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/api\/Annotations\.pbobjc\.h"'@'\<googleapis\/Annotations\.pbobjc\.h\>'@g
-grep -rl "google/longrunning/Operations.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/longrunning\/Operations\.pbobjc\.h"'@'\<googleapis\/Operations\.pbobjc\.h\>'@g
-grep -rl "google/rpc/Status.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/rpc\/Status\.pbobjc\.h"'@'\<googleapis\/Status\.pbobjc\.h\>'@g
-grep -rl "google/protobuf/Duration.pbobjc.h"  google/** | xargs sed -i '' s@'"google\/protobuf\/Duration\.pbobjc\.h"'@'\<googleapis\/Duration\.pbobjc\.h>'@g
 
-echo "commenting out #import \"transformations/GRXMappingWriter.h\" in gRPC-RxLibrary-umbrella.h"
-sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
-sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#import "internal_testing\/GRPCCall+InternalTests\.h"'@g "Pods/Target Support Files/gRPC/gRPC-umbrella.h"
+find google -name '*.h' | xargs grep -l "google/cloud/speech/v1/CloudSpeech.pbobjc.h" | xargs sed -i '' s@'^[ ]*\#import[ ]*"google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"'@'#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) \&\& GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS\
+ #import \<googleapis\/CloudSpeech\.pbobjc\.h\>\
+#else\
+ #import "google\/cloud\/speech\/v1\/CloudSpeech\.pbobjc\.h"\
+#endif'@g
+find google -name '*.h' | xargs grep -rl "google/api/Annotations.pbobjc.h"  | xargs sed -i '' s@'^[ \t]*\#import[ \t]*"google\/api\/Annotations\.pbobjc\.h"'@'#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) \&\& GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS\
+ #import \<googleapis\/Annotations\.pbobjc\.h\>\
+#else\
+ #import "google\/api\/Annotations\.pbobjc\.h"\
+#endif'@g
+find google -name '*.h' | xargs grep -rl "google/longrunning/Operations.pbobjc.h" | xargs sed -i '' s@'^[ \t]*\#import[ \t]*"google\/longrunning\/Operations\.pbobjc\.h"'@'#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) \&\& GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS\
+ #import \<googleapis\/Operations\.pbobjc\.h\>\
+#else\
+ #import "google\/longrunning\/Operations\.pbobjc\.h"\
+#endif'@g
+find google -name '*.h' | xargs grep -rl "google/rpc/Status.pbobjc.h" | xargs sed -i '' s@'^[ \t]*\#import[ \t]*"google\/rpc\/Status\.pbobjc\.h"'@'#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) \&\& GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS\
+ #import \<googleapis\/Status\.pbobjc\.h\>\
+#else\
+ #import "google\/rpc\/Status\.pbobjc\.h"\
+#endif'@g
+find google -name '*.h' | xargs grep -rl "google/protobuf/Duration.pbobjc.h" | xargs sed -i '' s@'^[ \t]*\#import[ \t]*"google\/protobuf\/Duration\.pbobjc\.h"'@'#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) \&\& GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS\
+ #import \<googleapis\/Duration\.pbobjc\.h>\
+#else\
+ #import "google\/protobuf\/Duration\.pbobjc\.h"\
+#endif'@g
+
+# 
+# echo "commenting out #import \"transformations/GRXMappingWriter.h\" in gRPC-RxLibrary-umbrella.h"
+# sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
+# sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#import "internal_testing\/GRPCCall+InternalTests\.h"'@g "Pods/Target Support Files/gRPC/gRPC-umbrella.h"
+
+# suppress warnings
+echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/Protobuf/Protobuf.xcconfig"
+echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/googleapis/googleapis.xcconfig"
+echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/gRPC-ProtoRPC/gRPC-ProtoRPC.xcconfig"
 
 #echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names
 #mv "Pods/BoringSSL/include/openssl/module.modulemap" "Pods/BoringSSL/include/openssl/BoringSSL.modulemap"
 
+mv Pods/Pods.xcodeproj Pods/Pods.ios.xcodeproj
+
 ## build it. assume that 'All' target exists, which it is not by default
-xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release-iphoneos -sdk iphoneos
-xcodebuild -project Pods/Pods.xcodeproj -target Pods-Speech -configuration Release-iphonesimulator -sdk iphonesimulator
+xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphoneos -sdk iphoneos
+xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphonesimulator -sdk iphonesimulator
 
 

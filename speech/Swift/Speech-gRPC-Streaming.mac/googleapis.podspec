@@ -38,7 +38,6 @@ Pod::Spec.new do |s|
   # The --objc_out plugin generates a pair of .pbobjc.h/.pbobjc.m files for each .proto file.
   s.subspec "Messages" do |ms|
     ms.source_files = "google/**/*.pbobjc.{h,m}"
-    ms.header_mappings_dir = "."
     ms.requires_arc = false
     ms.dependency "Protobuf"
   end
@@ -47,7 +46,6 @@ Pod::Spec.new do |s|
   # a service defined.
   s.subspec "Services" do |ss|
     ss.source_files = "google/**/*.pbrpc.{h,m}"
-    ss.header_mappings_dir = "."
     ss.requires_arc = true
     ss.dependency "gRPC-ProtoRPC"
     ss.dependency "#{s.name}/Messages"
