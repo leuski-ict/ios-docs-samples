@@ -33,13 +33,15 @@ find google -name '*.h' | xargs grep -rl "google/protobuf/Duration.pbobjc.h" | x
 
 # 
 # echo "commenting out #import \"transformations/GRXMappingWriter.h\" in gRPC-RxLibrary-umbrella.h"
-# sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
-# sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#import "internal_testing\/GRPCCall+InternalTests\.h"'@g "Pods/Target Support Files/gRPC/gRPC-umbrella.h"
+sed -i '' s@'^#import "transformations\/GRXMappingWriter\.h"'@'\/\/#import "transformations\/GRXMappingWriter\.h"'@g "Pods/Target Support Files/gRPC-RxLibrary/gRPC-RxLibrary-umbrella.h"
+sed -i '' s@'^#import "internal_testing\/GRPCCall+InternalTests\.h"'@'\/\/#import "internal_testing\/GRPCCall+InternalTests\.h"'@g "Pods/Target Support Files/gRPC/gRPC-umbrella.h"
 
 # suppress warnings
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/Protobuf/Protobuf.xcconfig"
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/googleapis/googleapis.xcconfig"
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/gRPC-ProtoRPC/gRPC-ProtoRPC.xcconfig"
+echo "CODE_SIGN_IDENTITY = " >> "Pods/Target Support Files/gRPC/gRPC.xcconfig"
+
 
 #echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names

@@ -53,6 +53,7 @@ perl -0777 -i -pe 's@(/\* gRPC \*/ = {[^}]*?isa = PBXNativeTarget.*?buildPhases.
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/Protobuf/Protobuf.xcconfig"
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/googleapis/googleapis.xcconfig"
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/gRPC-ProtoRPC/gRPC-ProtoRPC.xcconfig"
+echo "CODE_SIGN_IDENTITY = " >> "Pods/Target Support Files/gRPC/gRPC.xcconfig"
 
 #echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names
@@ -61,7 +62,7 @@ echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "
 mv Pods/Pods.xcodeproj Pods/Pods.mac.xcodeproj
 
 ## build it. assume that 'All' target exists, which it is not by default
-#xcodebuild -project Pods/Pods.mac.xcodeproj -target Pods-Speech -configuration Release
+xcodebuild -project Pods/Pods.mac.xcodeproj -target Pods-Speech -configuration Release
 
 #echo "Opening the project workspace in Xcode"
 #open Speech.xcworkspace
