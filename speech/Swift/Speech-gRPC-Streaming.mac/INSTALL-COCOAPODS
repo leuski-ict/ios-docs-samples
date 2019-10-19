@@ -49,6 +49,12 @@ sed -i '' s@'shellScript = "base=\\"\$CONFIGURATION_BUILD_DIR/\$WRAPPER_NAME\\"\
 echo "fix the certificate bundle"
 perl -0777 -i -pe 's@(/\* gRPC \*/ = {[^}]*?isa = PBXNativeTarget.*?buildPhases.*?)(\).*?};)@$1  575757575757575757575757575757575 /* Create Symlink to roots.pem File */,\n$2\n575757575757575757575757575757575 /* Create Symlink to roots.pem File */ = {\n			isa = PBXShellScriptBuildPhase;\n			buildActionMask = 2147483647;\n			files = (\n			);\n			inputPaths = (\n			);\n			name = "Create Symlink to roots.pem File";\n			outputPaths = (\n			);\n			runOnlyForDeploymentPostprocessing = 0;\n			shellPath = /bin/sh;\n			shellScript = "cd \\"\${CONFIGURATION_BUILD_DIR}/\${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle\\"\\nln -fs \\"Contents/Resources/roots.pem\\"\\n";\n			showEnvVarsInLog = 1;\n		};@igs' Pods/Pods.xcodeproj/project.pbxproj
 
+# remove copying of internal_testing\/GRPCCall+InternalTests\.h
+perl -0777 -i -pe 's@({[^}]*?dstPath = "\$\(PUBLIC_HEADERS_FOLDER_PATH\)/internal_testing";[^}]*?files = \()[^\)]*?(\))@$1$2@igs' Pods/Pods.xcodeproj/project.pbxproj
+
+# remove ARCHS_STANDARD_64_BIT
+perl -0777 -i -pe 's@(\n)[^\n]*ARCHS = "\$\(ARCHS_STANDARD_64_BIT\)";[^\n]*\n@$1@igs' Pods/Pods.xcodeproj/project.pbxproj
+
 # suppress warnings
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/Protobuf/Protobuf.xcconfig"
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/googleapis/googleapis.xcconfig"
@@ -62,7 +68,7 @@ echo "CODE_SIGN_IDENTITY = " >> "Pods/Target Support Files/gRPC/gRPC.xcconfig"
 mv Pods/Pods.xcodeproj Pods/Pods.mac.xcodeproj
 
 ## build it. assume that 'All' target exists, which it is not by default
-xcodebuild -project Pods/Pods.mac.xcodeproj -target Pods-Speech -configuration Release
+#xcodebuild -project Pods/Pods.mac.xcodeproj -target Pods-Speech -configuration Release
 
 #echo "Opening the project workspace in Xcode"
 #open Speech.xcworkspace

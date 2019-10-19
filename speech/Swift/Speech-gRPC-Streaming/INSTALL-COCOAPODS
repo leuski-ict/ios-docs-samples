@@ -42,6 +42,12 @@ echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "
 echo "WARNING_CFLAGS = -Wno-nonportable-include-path -Wno-missing-noescape" >> "Pods/Target Support Files/gRPC-ProtoRPC/gRPC-ProtoRPC.xcconfig"
 echo "CODE_SIGN_IDENTITY = " >> "Pods/Target Support Files/gRPC/gRPC.xcconfig"
 
+# remove copying of internal_testing\/GRPCCall+InternalTests\.h
+perl -0777 -i -pe 's@({[^}]*?dstPath = "\$\(PUBLIC_HEADERS_FOLDER_PATH\)/internal_testing";[^}]*?files = \()[^\)]*?(\))@$1$2@igs' Pods/Pods.xcodeproj/project.pbxproj
+
+# remove ARCHS_STANDARD_64_BIT
+perl -0777 -i -pe 's@(\n)[^\n]*ARCHS = "\$\(ARCHS_STANDARD_64_BIT\)";[^\n]*\n@$1@igs' Pods/Pods.xcodeproj/project.pbxproj
+
 
 #echo "fix openssl modulemap"
 ## XCode 9 requires uniqness for module map file names
@@ -50,7 +56,7 @@ echo "CODE_SIGN_IDENTITY = " >> "Pods/Target Support Files/gRPC/gRPC.xcconfig"
 mv Pods/Pods.xcodeproj Pods/Pods.ios.xcodeproj
 
 ## build it. assume that 'All' target exists, which it is not by default
-xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphoneos -sdk iphoneos
-xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphonesimulator -sdk iphonesimulator
+#xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphoneos -sdk iphoneos
+#xcodebuild -project Pods/Pods.ios.xcodeproj -target Pods-Speech -configuration Release-iphonesimulator -sdk iphonesimulator
 
 
